@@ -1,18 +1,14 @@
 #include <iostream>
 #include <string>
-#include "linkedlist.h"
+#include "list.h"
 
 using namespace std;
 
 template<typename T>
-void testCopyConstructor(LinkedList<T> list){
-    list.pop();
-    list.print();
-    // CORRECT: 4, 7
-}
+void testCopyConstructor(LinkedList<T> list);
 
 
-
+// Test of linked list functions
 int main() {
     LinkedList <int> list;
     list.push(7);
@@ -27,7 +23,9 @@ int main() {
    
     list.print();
     // 10, 7
+    
     cout << list.size() << endl;
+    // 2
     
     list.insert(4, 1); // Insert 4 at index 1
     
@@ -40,6 +38,7 @@ int main() {
     // 10, 4, 7
     
     testCopyConstructor(list);
+    // 4, 7
     
     LinkedList<int> list2;
     list2 = list; // Call = operator overloaded function
@@ -48,9 +47,13 @@ int main() {
     list2.push(5);
     list2.print();
     // CORRECT: 5, 10, 4, 7;
-    // INCORRECT: 5, 14, 10, 4, 7;
-    // INCORRECT: 5
-    
-    
+
     return 0;
+}
+
+template<typename T>
+void testCopyConstructor(LinkedList<T> list){
+    list.pop();
+    list.print();
+    // CORRECT: 4, 7
 }

@@ -5,6 +5,14 @@
 
 using namespace std;
 
+/*
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Function Prototypes
+(you cant use templates if you have both a .h and .cpp)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+*/
 
 template<typename T>
 struct Node{
@@ -22,24 +30,32 @@ class LinkedList{
     LinkedList();
     // Destructor
     ~LinkedList();
-    
     // Copy Constructor
     LinkedList(const LinkedList& listToCopy);
     // Copy Assignment Override
     LinkedList& operator=(const LinkedList& listToCopy);
-    // Add new value to head of list
-    void push(T);
-    // return value at head and remove head
-    T pop();
-    // print list contents
-    void print() const;
-    // get value at specified index
-    T get(int) const;
-    // Returns numnber of nodes in the list
-    int size() const;
-    // Adds a node at the specified index within the list
-    void insert(T, int);
+    
+    void push(T); // Add new value to head of list
+    
+    T pop(); // return value at head and remove head
+    
+    void print() const; // print list contents
+    
+    T get(int) const; // get value at specified index
+    
+    int size() const; // Returns numnber of nodes in the list
+    
+    void insert(T, int); // Adds a node at the specified index within the list
 };
+
+/*
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Function Definitions
+(you cant use templates if you have both a .h and .cpp)
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+*/
 
 // Constructor
 template<typename T>
